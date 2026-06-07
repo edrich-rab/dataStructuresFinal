@@ -1,0 +1,43 @@
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
+#include <string>
+
+#include "Pokemon.h"
+
+using namespace std;
+
+class LinkedList
+{
+private:
+
+    struct Node
+    {
+        Pokemon data;
+        Node * next;
+    };
+
+    Node * head;
+
+public:
+
+    LinkedList();
+
+    ~LinkedList();
+
+    bool isEmpty() const;
+
+    void insertPokemon(const Pokemon & pokemon);
+
+    void displayTeam() const;
+
+    bool searchTeam(const string & name) const;
+
+    int getSize() const;
+
+    Pokemon getPokemonAt(int position) const;
+
+    bool addWinToPokemon(const string & name);
+};
+
+#endif
